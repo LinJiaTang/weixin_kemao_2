@@ -11,15 +11,15 @@ public class MessageReceiverController {
 
 	
 	@GetMapping
-	public String echo{//
+	public String echo(//
 		
 		  String signature, //
 		  String timestamp, //
 		  String nonce, //
-		  String echostr, //
+		  String echostr//
 		  
 		//
-	}{
+	){
 		return echostr;
 	}
 }
