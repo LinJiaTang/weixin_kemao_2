@@ -39,4 +39,11 @@ public class LinkMessage extends InMessage{
 	public void setUrl(String url) {
 		this.url = url;
 	}
+
+	@Override
+	public String toString() {
+		return "LinkMessage [title=" + title + ", description=" + description + ", url=" + url + ", getTouUserName()="
+				+ getTouUserName() + ", getFromUserName()=" + getFromUserName() + ", getCreateTime()=" + getCreateTime()
+				+ ", getMsqType()=" + getMsqType() + ", getMysId()=" + getMysId() + "]";
+	}
 }

@@ -22,4 +22,11 @@ public class UnconcernedMessage extends InMessage {
 		this.eventKey = eventKey;
 	}
 
+	@Override
+	public String toString() {
+		return "UnconcernedMessage [event=" + event + ", eventKey=" + eventKey + ", getTouUserName()="
+				+ getTouUserName() + ", getFromUserName()=" + getFromUserName() + ", getCreateTime()=" + getCreateTime()
+				+ ", getMsqType()=" + getMsqType() + ", getMysId()=" + getMysId() + "]";
+	}
+
 }

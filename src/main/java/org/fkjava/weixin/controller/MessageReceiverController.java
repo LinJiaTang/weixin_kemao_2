@@ -1,5 +1,7 @@
 package org.fkjava.weixin.controller;
 
+import org.fkjava.weixin.domain.InMessage;
+import org.fkjava.weixin.service.MessageConvertHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,9 +55,12 @@ public class MessageReceiverController {
 		//转换消息
 		
 		//转换消息1.获取消息的类型
-		String type = xml.substring(xml.indexOf("<MsgType><![CDATA[")+18);
-		type = type.substring(8, type.indexOf("]"));
+	//	String type = xml.substring(xml.indexOf("<MsgType><![CDATA[")+18);
+    //type = type.substring(8, type.indexOf("]"));
 		
+		InMessage inMessage = MessageConvertHelper.convert(xml);
+		
+		LOG.debug("转换后的消息对象\n{}\n",inMessage);
 		//把消息丢入队列
 		//消费队列中的消息
 		//产生客服消息

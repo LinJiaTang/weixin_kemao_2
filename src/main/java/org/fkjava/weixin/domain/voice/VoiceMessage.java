@@ -18,4 +18,11 @@ public class VoiceMessage extends InMessage{
 	public void setPicUrl(String picUrl) {
 		PicUrl = picUrl;
 	}
+
+	@Override
+	public String toString() {
+		return "VoiceMessage [PicUrl=" + PicUrl + ", getTouUserName()=" + getTouUserName() + ", getFromUserName()="
+				+ getFromUserName() + ", getCreateTime()=" + getCreateTime() + ", getMsqType()=" + getMsqType()
+				+ ", getMysId()=" + getMysId() + "]";
+	}
 }

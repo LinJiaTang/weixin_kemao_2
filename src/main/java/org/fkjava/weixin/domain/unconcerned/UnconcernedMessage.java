@@ -11,6 +11,12 @@ public class UnconcernedMessage extends InMessage{
 	@XmlElement(name="ThumbMediaId")
 	private String thumbMediaId;
 	
-	@XmlElement(name="ThumbMediaId")
-	private String thumbMediaId;
+
+
+	@Override
+	public String toString() {
+		return "UnconcernedMessage [thumbMediaId=" + thumbMediaId + ", getTouUserName()=" + getTouUserName()
+				+ ", getFromUserName()=" + getFromUserName() + ", getCreateTime()=" + getCreateTime()
+				+ ", getMsqType()=" + getMsqType() + ", getMysId()=" + getMysId() + "]";
+	}
 }

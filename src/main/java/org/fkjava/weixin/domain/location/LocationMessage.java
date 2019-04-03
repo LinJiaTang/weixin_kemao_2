@@ -50,5 +50,13 @@ public class LocationMessage extends InMessage{
 	public void setLabel(String label) {
 		this.label = label;
 	}
+
+	@Override
+	public String toString() {
+		return "LocationMessage [location_X=" + location_X + ", location_Y=" + location_Y + ", scale=" + scale
+				+ ", label=" + label + ", getTouUserName()=" + getTouUserName() + ", getFromUserName()="
+				+ getFromUserName() + ", getCreateTime()=" + getCreateTime() + ", getMsqType()=" + getMsqType()
+				+ ", getMysId()=" + getMysId() + "]";
+	}
 	
 }

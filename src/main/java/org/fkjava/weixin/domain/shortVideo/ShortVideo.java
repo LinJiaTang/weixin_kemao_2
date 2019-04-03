@@ -9,5 +9,12 @@ public class ShortVideo extends InMessage{
 	
 	@XmlElement(name="ThumbMediaId")
 	private String thumbMediaId;
+
+	@Override
+	public String toString() {
+		return "ShortVideo [thumbMediaId=" + thumbMediaId + ", getTouUserName()=" + getTouUserName()
+				+ ", getFromUserName()=" + getFromUserName() + ", getCreateTime()=" + getCreateTime()
+				+ ", getMsqType()=" + getMsqType() + ", getMysId()=" + getMysId() + "]";
+	}
 	
 }

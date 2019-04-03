@@ -23,6 +23,13 @@ public class TextInMessage extends InMessage {
 	public void setContent(String content) {
 		Content = content;
 	}
+
+	@Override
+	public String toString() {
+		return "TextInMessage [Content=" + Content + ", getTouUserName()=" + getTouUserName() + ", getFromUserName()="
+				+ getFromUserName() + ", getCreateTime()=" + getCreateTime() + ", getMsqType()=" + getMsqType()
+				+ ", getMysId()=" + getMysId() + "]";
+	}
 	
 	
 }
