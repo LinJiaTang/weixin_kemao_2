@@ -51,6 +51,11 @@ public class MessageReceiverController {
 		//LOG。trace必须要求日志记录器的配置为trace级别才能输出
 		LOG.trace("收到的消息原文：\n{}\n------------------",xml);
 		//转换消息
+		
+		//转换消息1.获取消息的类型
+		String type = xml.substring(xml.indexOf("<MsgType><![CDATA[")+18);
+		type = type.substring(8, type.indexOf("]"));
+		
 		//把消息丢入队列
 		//消费队列中的消息
 		//产生客服消息
