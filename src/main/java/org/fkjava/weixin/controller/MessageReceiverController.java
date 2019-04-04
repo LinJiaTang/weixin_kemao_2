@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 // 路径和类的映射关系
 // <url-pattern> 用于映射URL和Servlet的关系
 // 如果多人共享一台服务器，把Kemao_2改为姓名的拼音
-@RequestMapping("kemao_2/message/receiver")
+@RequestMapping("kemao-2/message/receiver")
 public class MessageReceiverController {
     
 	
@@ -30,8 +30,7 @@ public class MessageReceiverController {
 	//处理GET请求，HTTP协议支持GET POST PUT DELETE等亲求方式，都有对应的注解
 	@GetMapping
 	
-	public String echo(
-			
+	public String echo(//
 			String signature,
 			String timestamp,
 			String nonce,
