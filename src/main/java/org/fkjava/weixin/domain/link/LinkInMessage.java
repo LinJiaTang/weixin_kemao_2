@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 import org.fkjava.weixin.domain.InMessage;
 
-public class LinkMessage extends InMessage{
+public class LinkInMessage extends InMessage{
 	private static final long seriaVersionUID = 1L;
 	
 	@XmlElement(name="Title")

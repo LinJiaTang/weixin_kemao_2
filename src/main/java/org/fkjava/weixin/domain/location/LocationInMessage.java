@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 import org.fkjava.weixin.domain.InMessage;
 
-public class LocationMessage extends InMessage{
+public class LocationInMessage extends InMessage{
 	private static final long seriaVersionUID = 1L;
 	
 	@XmlElement(name="Location_X")

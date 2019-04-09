@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 import org.fkjava.weixin.domain.InMessage;
 
-public class UnconcernedMessage extends InMessage {
+public class UnconcernedInMessage extends InMessage {
 	
 	private static final long seriaVersionUID = 1L;
 	

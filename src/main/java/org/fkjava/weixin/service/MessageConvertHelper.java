@@ -27,6 +27,19 @@ public class MessageConvertHelper {
 		typeMap.put("shortvideo", TextInMessage.class);
 
 	}
+	
+	public static Class<? extends InMessage> getClass(String xml) {
+		
+		//获取类型
+		String type = xml.substring(xml.indexOf("<MsgType><![CDATA[")+18);
+		type = type.substring(8, type.indexOf("]"));
+				
+		//获取Java类
+		Class<? extends InMessage> c = typeMap.get(type);
+		
+		return c;
+	}
+	
 	//2.提供一个静态的方法，可以闯入XML转换为Java对象
 	public static <T extends InMessage> T convert (String xml) {
 		//获取类型
@@ -35,7 +48,11 @@ public class MessageConvertHelper {
 		
 		
 		//获取Java类
-		Class<? extends InMessage> c = typeMap.get(type);
+		Class<? extends InMessage> c = getClass(xml);
+		
+		if( c== null ) {
+			return null;
+		}
 		
 		//使用JAXB转换
 		@SuppressWarnings("unchecked")
