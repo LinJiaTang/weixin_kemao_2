@@ -91,23 +91,24 @@ public class MessageReceiverController {
 		out.writeObject(inMessage);
 		
 		byte[]data = bos.toByteArray();//序列化之后的字节数组
-		
+	
 		//2.把序列化后对象放入队列里面
-
+		String channel = "kemao-2_"+inMessage.getMsqType();
+		inMessageTemplate.convertAndSend(channel,inMessage);
 		
-		inMessageTemplate.execute(new RedisCallback<InMessage>() {
-			@Override
-			public InMessage doInRedis(RedisConnection connection)throws DataAccessException{
-				
-				//建议不同的人分开前缀
-				String channel = "kemao-2_"+inMessage.getMsqType();
-					connection.publish(channel.getBytes(),data);
-
-				return null;
-			}
-
-		
-		});
+// 		inMessageTemplate.execute(new RedisCallback<InMessage>() {
+//			@Override
+//			public InMessage doInRedis(RedisConnection connection)throws DataAccessException{
+//				
+//				//建议不同的人分开前缀
+//				String channel = "kemao-2_"+inMessage.getMsqType();
+//					connection.publish(channel.getBytes(),data);
+//
+//				return null;
+//			}
+//
+//		
+//		});
 		//消费队列中的消息
 		//产生客服消息
 		
