@@ -7,13 +7,10 @@ import org.fkjava.weixin.domain.InMessage;
 public class LinkInMessage extends InMessage{
 	private static final long seriaVersionUID = 1L;
 	
-	@XmlElement(name="Title")
 	private String title;
 	
-	@XmlElement(name="Description")
 	private String description;
 	
-	@XmlElement(name="Url")
 	private String url;
 
 	public String getTitle() {

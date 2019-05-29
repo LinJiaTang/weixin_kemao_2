@@ -13,7 +13,6 @@ public class TextInMessage extends InMessage {
 
 	private static final long seriaVersionUID = 1L;
 	
-	@XmlElement(name="Content")
 	private String Content;
 
 	public String getContent() {

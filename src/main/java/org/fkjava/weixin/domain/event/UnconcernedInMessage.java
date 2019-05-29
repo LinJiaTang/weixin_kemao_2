@@ -8,10 +8,9 @@ public class UnconcernedInMessage extends InMessage {
 	
 	private static final long seriaVersionUID = 1L;
 	
-	@XmlElement(name="Event")
+	
 	private String event;
 	
-	@XmlElement(name="EventKey")
 	private String eventKey;
 
 	public String getEventKey() {

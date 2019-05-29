@@ -14,10 +14,9 @@ public class ImageInMessage extends InMessage{
 	
 	private static final long seriaVersionUID = 1L;
 	
-	@XmlElement(name="PicUrl")
+	
 	private String imagUrl;
 	
-	@XmlElement(name="MediaId")
 	private String mediaId;
 
 	public String getImagUrl() {

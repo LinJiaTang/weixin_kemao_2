@@ -8,7 +8,6 @@ public class UnconcernedInMessage extends InMessage{
 
 	private static final long seriaVersionUID = 1L;
 	
-	@XmlElement(name="ThumbMediaId")
 	private String thumbMediaId;
 	
 

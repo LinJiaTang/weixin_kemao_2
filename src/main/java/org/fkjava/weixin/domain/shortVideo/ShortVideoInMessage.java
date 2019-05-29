@@ -7,7 +7,6 @@ import org.fkjava.weixin.domain.InMessage;
 public class ShortVideoInMessage extends InMessage{
 	private static final long seriaVersionUID = 1L;
 	
-	@XmlElement(name="ThumbMediaId")
 	private String thumbMediaId;
 
 	@Override

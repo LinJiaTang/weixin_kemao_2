@@ -8,7 +8,6 @@ public class VideoInMessage extends InMessage {
 
 	private static final long seriaVersionUID = 1L;
 	
-	@XmlElement(name="ThumbMediaId")
 	private String thumbMediaId;
 
 	public String getThumbMediaId() {

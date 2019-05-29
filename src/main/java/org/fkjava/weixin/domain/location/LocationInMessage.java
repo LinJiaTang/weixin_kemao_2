@@ -7,16 +7,12 @@ import org.fkjava.weixin.domain.InMessage;
 public class LocationInMessage extends InMessage{
 	private static final long seriaVersionUID = 1L;
 	
-	@XmlElement(name="Location_X")
 	private String location_X;
 
-	@XmlElement(name="Location_Y")
 	private String location_Y;
 	
-	@XmlElement(name="Scale")
 	private String scale;
 	
-	@XmlElement(name="Label")
 	private String label;
 
 	public String getLocation_X() {

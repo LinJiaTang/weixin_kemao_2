@@ -8,7 +8,6 @@ public class VoiceInMessage extends InMessage{
 
 	private static final long seriaVersionUID = 1L;
 	
-	@XmlElement(name="PicUrl")
 	private String PicUrl;
 
 	public String getPicUrl() {

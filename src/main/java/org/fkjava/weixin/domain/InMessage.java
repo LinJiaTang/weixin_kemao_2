@@ -12,7 +12,7 @@ public abstract class InMessage implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	//Xml开头的注解都是JAXB的
+	
 	@JsonProperty("ToUserName")
 	private String toUserName;
 
@@ -71,7 +71,17 @@ public abstract class InMessage implements Serializable {
 		this.msgId = mysId;
 	}
 	
-	abstract public String toString();
+	public String getEvent() {
+		return event;
+	}
+
+	public void setEvent(String event) {
+		this.event = event;
+	}
 	
+	
+	abstract public String toString();
+
+
 
 }
