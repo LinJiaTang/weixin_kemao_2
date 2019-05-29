@@ -1,6 +1,7 @@
 package org.fkjava.weixin;
 
 import org.fkjava.weixin.domain.InMessage;
+import org.fkjava.weixin.service.JsonRedisSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,6 +27,8 @@ public class weixinApplication {
 		
 		RedisTemplate<String,?extends InMessage> template = new RedisTemplate();
 		template.setConnectionFactory(connectionFactory);
+		//使用序列化程序完成对象的序列化和反序列化，可以自定义
+		template.setValueSerializer(new JsonRedisSerializer<InMessage>());
 		
 		return template;
 	}

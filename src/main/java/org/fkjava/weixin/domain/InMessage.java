@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @XmlRootElement(name="xml")
 @XmlAccessorType(XmlAccessType.FIELD)//从字段获取配置信息
 public abstract class InMessage implements Serializable {
@@ -16,27 +18,32 @@ public abstract class InMessage implements Serializable {
 	
 	
 	//Xml开头的注解都是JAXB的
-	@XmlElement(name="TouUserName")
-	private String touUserName;
+	@XmlElement(name="ToUserName")
+	@JsonProperty("ToUserName")
+	private String toUserName;
 
 	@XmlElement(name="FromUserName")
+	@JsonProperty("FromUserName")
 	private String fromUserName;
 	
 	@XmlElement(name="CreateTime")
+	@JsonProperty("CreateTime")
 	private long createTime;
 	
-	@XmlElement(name="MsqType")
-	private String msqType;
+	@XmlElement(name="MsgType")
+	@JsonProperty("MsgType")
+	private String msgType;
 	
-	@XmlElement(name="MsId")
-	private String mysId;
+	@XmlElement(name="MsgId")
+	@JsonProperty("MsgId")
+	private String msgId;
 
 	public String getTouUserName() {
-		return touUserName;
+		return toUserName;
 	}
 
 	public void setTouUserName(String touUserName) {
-		this.touUserName = touUserName;
+		this.toUserName = touUserName;
 	}
 
 	public String getFromUserName() {
@@ -56,19 +63,19 @@ public abstract class InMessage implements Serializable {
 	}
 
 	public String getMsqType() {
-		return msqType;
+		return msgType;
 	}
 
 	public void setMsqType(String msqType) {
-		this.msqType = msqType;
+		this.msgType = msqType;
 	}
 
 	public String getMysId() {
-		return mysId;
+		return msgId;
 	}
 
 	public void setMysId(String mysId) {
-		this.mysId = mysId;
+		this.msgId = mysId;
 	}
 	
 	abstract public String toString();

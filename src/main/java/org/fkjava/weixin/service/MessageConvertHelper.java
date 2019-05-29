@@ -8,7 +8,12 @@ import javax.xml.bind.JAXB;
 
 import org.fkjava.weixin.domain.InMessage;
 import org.fkjava.weixin.domain.image.ImageInMessage;
+import org.fkjava.weixin.domain.link.LinkInMessage;
+import org.fkjava.weixin.domain.location.LocationInMessage;
+import org.fkjava.weixin.domain.shortVideo.ShortVideoInMessage;
 import org.fkjava.weixin.domain.text.TextInMessage;
+import org.fkjava.weixin.domain.video.VideoInMessage;
+import org.fkjava.weixin.domain.voice.VoiceInMessage;
 
 public class MessageConvertHelper {
 
@@ -19,12 +24,12 @@ public class MessageConvertHelper {
 		typeMap.put("image", ImageInMessage.class);
 		
 		//其余的类型也是使用相同的方式关联起来
-		typeMap.put("vioce", TextInMessage.class);
-		typeMap.put("video", TextInMessage.class);
-		typeMap.put("location", TextInMessage.class);
-		typeMap.put("event", TextInMessage.class);
-		typeMap.put("link", TextInMessage.class);
-		typeMap.put("shortvideo", TextInMessage.class);
+		typeMap.put("voice", VoiceInMessage.class);
+		typeMap.put("video", VideoInMessage.class);
+		typeMap.put("location", LocationInMessage.class);
+		
+		typeMap.put("link", LinkInMessage.class);
+		typeMap.put("shortVideo", ShortVideoInMessage.class);
 
 	}
 	
@@ -32,7 +37,7 @@ public class MessageConvertHelper {
 		
 		//获取类型
 		String type = xml.substring(xml.indexOf("<MsgType><![CDATA[")+18);
-		type = type.substring(8, type.indexOf("]"));
+		type = type.substring(0, type.indexOf("]"));
 				
 		//获取Java类
 		Class<? extends InMessage> c = typeMap.get(type);
