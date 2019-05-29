@@ -7,6 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.xml.bind.JAXB;
 
 import org.fkjava.weixin.domain.InMessage;
+import org.fkjava.weixin.domain.event.FollowInMessage;
 import org.fkjava.weixin.domain.image.ImageInMessage;
 import org.fkjava.weixin.domain.link.LinkInMessage;
 import org.fkjava.weixin.domain.location.LocationInMessage;
@@ -30,6 +31,7 @@ public class MessageConvertHelper {
 		
 		typeMap.put("link", LinkInMessage.class);
 		typeMap.put("shortVideo", ShortVideoInMessage.class);
+		typeMap.put("event", FollowInMessage.class);
 
 	}
 	
