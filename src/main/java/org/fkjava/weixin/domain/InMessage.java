@@ -18,6 +18,7 @@ public abstract class InMessage implements Serializable {
 
 	@JsonProperty("FromUserName")
 	private String fromUserName;
+	
 	@JsonProperty("CreateTime")
 	private long createTime;
 	
@@ -26,6 +27,9 @@ public abstract class InMessage implements Serializable {
 	
 	@JsonProperty("MsgId")
 	private String msgId;
+	
+	@JsonProperty("Event")
+	private String event;
 
 	public String getTouUserName() {
 		return toUserName;
